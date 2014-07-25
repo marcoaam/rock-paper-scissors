@@ -1,0 +1,15 @@
+<%if @game.player1.pick == "Scissors"%>
+	<img src="/images/scissors.jpg" alt="Rock" height="150" width="150">
+<% elsif @game.player1.pick == "Rock" %>
+	<img src="/images/Rock.jpg" alt="Rock" height="150" width="150">
+<% else%>
+	<img src="/images/paper.jpg" alt="Rock" height="150" width="150">
+<% end%>
+
+<%if @game.player2.pick == "Scissors"%>
+	<img src="/images/scissors.jpg" alt="Rock" height="150" width="150">
+<% elsif @game.player2.pick == "Rock" %>
+	<img src="/images/Rock.jpg" alt="Rock" height="150" width="150">
+<% else%>
+	<img src="/images/paper.jpg" alt="Rock" height="150" width="150">
+<% end%>

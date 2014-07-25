@@ -1,12 +1,16 @@
 RESULTS:
 <% if @game.winner == "Draw" %>
  <h1> it was a draw </h1>
+ <%=erb :winner%>
  <% elsif @game.winner.name == "Computer" %>
 	<h1> You lost, the <%=@game.winner.name%> won with <%= @game.winner.pick %></h1>
+	<%=erb :winner%>
 <% else %>
-	<h1> You won, with <%= @game.winner.pick %> </h1>
+	<h1> You won, with <%= @game.winner.pick%> </h1>
+	<%=erb :winner%>
 <%end%>
 <form action="/play_again" method="POST">
 <button>Play again!</button>
+
 
 
