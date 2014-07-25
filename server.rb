@@ -8,6 +8,10 @@ class RockPaperScissors < Sinatra::Base
   set :views, Proc.new { File.join(root, "views") }
   set :public_folder, Proc.new { File.join(root, "public") }
 
+  configure :production do
+    require 'newrelic_rpm'
+  end
+
   get '/' do
     erb :index
   end
