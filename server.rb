@@ -36,6 +36,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/play_again" do
+    @player = params[:name]
     erb :play
   end
 

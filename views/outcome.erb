@@ -1,4 +1,4 @@
-RESULTS:
+<h2>RESULTS:</h2>
 <% if @game.winner == "Draw" %>
  <h1> it was a draw </h1>
  <%=erb :winner%>
@@ -10,6 +10,7 @@ RESULTS:
 	<%=erb :winner%>
 <%end%>
 <form action="/play_again" method="POST">
+<input type="hidden" name="name" value=<%=@player%>>
 <button>Play again!</button>
 
 

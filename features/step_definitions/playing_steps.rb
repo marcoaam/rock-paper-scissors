@@ -7,7 +7,7 @@ When(/^I enter my name$/) do
 end
 
 Then(/^I should be ready to play$/) do
-  expect(page).to have_content("Welcome")
+  expect(page).to have_content("please pick an option")
 end
 
 

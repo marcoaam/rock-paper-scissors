@@ -1,7 +1,12 @@
-<h1>Welcome <%= @player%></h1>
+<h1><%= @player%> please pick an option</h1>
+
+	<img src="/images/rock.jpg" alt="Rock" height="150" width="150">
+	<img src="/images/paper.jpg" alt="Rock" height="150" width="150">
+	<img src="/images/scissors.jpg" alt="Rock" height="150" width="150"><br>
+
 <form action="/play" method="POST">
-	<button name="pick" value="Paper">Paper</button>
-	<button name="pick" value="Rock">Rock</button>
-	<button name="pick" value="Scissors">Scissors</button>
-	<input type="hidden" name="name" value=<%=@name%>>
+	<input type="hidden" name="name" value=<%=@player%>>
+	<button id="pick" name="pick" value="Rock">Rock</button>
+	<button id="pick" name="pick" value="Paper">Paper</button>
+	<button id="pick" name="pick" value="Scissors">Scissors</button>
 </form>

@@ -1,9 +1,47 @@
 body {
 	text-align: center;
+	position: relative;
+
 }
 
 h1 {
 	font-family: Helvetica;
-	font-size: 35;
-	color: skyblue;
+	font-size: 30;
+	color: #2274ab;
+}
+
+h2 {
+	font-family: Helvetica;
+	color: #2274ab;
+}
+
+button {
+   border-top: 1px solid #376f91;
+   background: #2274ab;
+   padding: 7px 14px;
+   border-radius: 8px;
+   color: #ffffff;
+   font-size: 11px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+
+button:hover {
+   border-top-color: #19699e;
+   background: #19699e;
+   color: #ffffff;
+   }
+button:active {
+   border-top-color: #4b555c;
+   background: #4b555c;
+   }
+
+#input_name{
+   position: relative;
+   margin: 20px auto;
+}
+
+#pick {
+	margin: 0 40px 20px 40px;
 }
