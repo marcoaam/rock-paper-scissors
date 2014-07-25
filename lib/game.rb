@@ -1,14 +1,14 @@
 class Game 
 
+	attr_reader :players, :player1, :player2
+
+	BEATS = {rock: :scissors, scissors: :paper, paper: :rock}
+
 	def initialize(player1, player2)
 		@player1 = player1
 		@player2 = player2
 		@players = [@player1, @player2]
 	end
-
-	BEATS = {rock: :scissors, scissors: :paper, paper: :rock}
-
-	attr_reader :players, :player1, :player2
 
 	def winner
 		return "Draw" if player1.pick == player2.pick

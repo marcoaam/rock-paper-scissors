@@ -1,12 +1,8 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
-require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
-
-  set :views, Proc.new { File.join(root, "views") }
-
   get '/' do
     erb :index
   end
@@ -22,18 +18,22 @@ class RockPaperScissors < Sinatra::Base
 
   post "/play" do
   	player = Player.new(params[:name])
-    @player = params[:name]
   	player.picks = params[:pick]
-  	computer = Computer.new
-    computer.picks = computer.random_pick
+  	computer = generate_computer
   	@game = Game.new(player, computer)
   	erb :outcome
   end
 
-  post "/play_again" do
-    erb :play
+  def generate_computer
+  	choice = ["Rock","Paper","Scissors"].sample
+
+  	comp = Player.new("computer")
+  	comp.picks = choice
+  	comp
   end
-  
+
+
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
