@@ -18,9 +18,9 @@ Feature: Playing
 		And I choose Paper
 		Then I should see "RESULTS"
 
-	Scenario: A player is trying to play a two players round
+	Scenario: A player plays a two players round
 		Given I've registered to play with two players
-		Then I should see "Let's wait a moment"
-		Then Another player registers for playing
+		Then I should see "Welcome Marco let's wait a moment"
+		Then Another player named Alex registers for playing
 		When I choose Paper
-		Then I should see "Let's wait a moment"
+		Then I should see "Alex please let's wait a moment"

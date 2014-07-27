@@ -23,10 +23,10 @@ Given(/^I've registered to play with two players$/) do
   click_button "Play!"
 end
 
-Then(/^Another player registers for playing$/) do
+Then(/^Another player named Alex registers for playing$/) do
   visit '/'
   click_button "Two Players"
-  fill_in "name", with: "Lucila"
+  fill_in "name", with: "Alex"
   click_button "Play!"
 end
 
