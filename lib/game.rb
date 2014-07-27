@@ -1,13 +1,40 @@
 class Game 
 
-	attr_reader :players, :player1, :player2
+	attr_accessor :players
 
 	BEATS = {rock: :scissors, scissors: :paper, paper: :rock}
 
-	def initialize(player1, player2)
-		@player1 = player1
-		@player2 = player2
-		@players = [@player1, @player2]
+	def initialize
+		@single_player = true
+		@players = []
+	end
+
+	def player1
+		@players.first
+	end
+
+	def player2
+		@players.last
+	end
+
+	def add(player)
+		@players << player
+	end
+
+	def two_players
+		@single_player = false
+	end
+
+	def one_player
+		@single_player = true
+	end
+
+	def single_player?
+		@single_player
+	end
+
+	def reset_players_picks
+		@players.each { |player| player.picks = nil }
 	end
 
 	def winner
@@ -18,5 +45,21 @@ class Game
 
 	def normalize(pick)
 		pick.downcase.to_sym
+	end
+
+	def ready_to_start?
+		players.count == 2
+	end
+
+	def return_player(player_name)
+		@players.select { |player| player_name == player.name }.first
+	end
+
+	def return_opponent(player_name)
+		@players.reject { |player| player_name == player.name }.first
+	end
+
+	def return_computer
+		@players.select { |player| player.name == "Computer" }.first
 	end
 end

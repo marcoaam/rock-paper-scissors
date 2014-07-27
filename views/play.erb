@@ -1,11 +1,10 @@
-<h1><%= @player%> please pick an option</h1>
+<h1><%= session[:player_name]%> please pick an option</h1>
 
 	<img src="/images/rock.jpg" alt="Rock" height="150" width="150">
 	<img src="/images/paper.jpg" alt="Rock" height="150" width="150">
 	<img src="/images/scissors.jpg" alt="Rock" height="150" width="150"><br>
 
 <form action="/play" method="POST">
-	<input type="hidden" name="name" value=<%=@player%>>
 	<button id="pick" name="pick" value="Rock">Rock</button>
 	<button id="pick" name="pick" value="Paper">Paper</button>
 	<button id="pick" name="pick" value="Scissors">Scissors</button>

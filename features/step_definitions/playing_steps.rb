@@ -10,13 +10,29 @@ Then(/^I should be ready to play$/) do
   expect(page).to have_content("please pick an option")
 end
 
-
-
 Given(/^I've registered to play$/) do
-  visit '/new-game'
+  visit '/'
+  click_button "Single Player"
   click_button "Play!"
 end
 
+Given(/^I've registered to play with two players$/) do
+  visit '/'
+  click_button "Two Players"
+  fill_in "name", with: "Marco"
+  click_button "Play!"
+end
+
+Then(/^Another player registers for playing$/) do
+  visit '/'
+  click_button "Two Players"
+  fill_in "name", with: "Lucila"
+  click_button "Play!"
+end
+
+Then(/^The other player chooses Paper$/) do
+  click_button "Paper"
+end
 
 When(/^I choose Paper$/) do
   click_button('Paper')

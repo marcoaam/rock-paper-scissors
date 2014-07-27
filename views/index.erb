@@ -5,4 +5,7 @@
 <img src="/images/paper.jpg" alt="Rock" height="150" width="150"> 
 <img src="/images/scissors.jpg" alt="Rock" height="150" width="150"><br><br>
 
-<a href="/new-game"><button>New Game</button></a>
+<form action="/new-game" method="GET">
+<button id="pick" name="game_type" value="single_player">Single Player</button>
+<button id="pick" name="game_type" value="two_players">Two Players</button>
+</form>
