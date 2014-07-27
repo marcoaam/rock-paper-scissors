@@ -32,16 +32,6 @@ describe Game do
 		expect(game.return_opponent("Stephen")).to eq player2
 	end
 
-	it 'can be single player' do
-		game.one_player
-		expect(game).to be_single_player
-	end
-
-	it 'can be against another player' do
-		game.two_players
-		expect(game).not_to be_single_player
-	end
-
 	it 'can reset the player picks' do
 		game.add(player1)
 		game.add(player2)
@@ -49,14 +39,6 @@ describe Game do
 		expect(game.player1).to receive(:picks=).with(nil)
 		expect(game.player2).to receive(:picks=).with(nil)
 		game.reset_players_picks
-	end
-
-	it 'can return the computer player only' do
-		computer = double :player1, name: "Computer"
-		game.add(player1)
-		game.add(computer)
-
-		expect(game.return_computer).to eq computer
 	end
 
 	context 'when playing' do

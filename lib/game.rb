@@ -21,18 +21,6 @@ class Game
 		@players << player
 	end
 
-	def two_players
-		@single_player = false
-	end
-
-	def one_player
-		@single_player = true
-	end
-
-	def single_player?
-		@single_player
-	end
-
 	def reset_players_picks
 		@players.each { |player| player.picks = nil }
 	end
@@ -58,8 +46,5 @@ class Game
 	def return_opponent(player_name)
 		@players.reject { |player| player_name == player.name }.first
 	end
-
-	def return_computer
-		@players.select { |player| player.name == "Computer" }.first
-	end
+	
 end

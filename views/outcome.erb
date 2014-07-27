@@ -1,12 +1,12 @@
 <h2>RESULTS:</h2>
-<% if GAME.winner == "Draw" %>
+<% if @game.winner == "Draw" %>
  <h1> it was a draw </h1>
  <%=erb :winner%>
- <% elsif GAME.winner.name == "Computer" %>
-	<h1> You lost, the <%=GAME.winner.name%> won with <%= GAME.winner.pick %></h1>
+ <% elsif @game.winner.name == "Computer" %>
+	<h1> You lost, the <%=@game.winner.name%> won with <%= @game.winner.pick %></h1>
 	<%=erb :winner%>
 <% else %>
-	<h1> <%= GAME.winner.name%> won, with <%= GAME.winner.pick%> </h1>
+	<h1> <%= @game.winner.name%> won, with <%= @game.winner.pick%> </h1>
 	<%=erb :winner%>
 <%end%>
 <form action="/" method="GET">
