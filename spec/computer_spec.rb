@@ -1,6 +1,7 @@
 require 'computer'
 
 describe Computer do
+	
 	let(:computer) { Computer.new }
 
 	it 'has Computer as name' do
